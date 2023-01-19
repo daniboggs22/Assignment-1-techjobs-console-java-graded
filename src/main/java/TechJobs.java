@@ -123,10 +123,12 @@ public class TechJobs {
         //create a nested loop to iterate over each HashMap job
         for (HashMap<String, String> job : someJobs) {
             //System.out.println(job);   // prints the jobs in HashMap form
+            System.out.println("*****");
 
             for (String i: job.keySet()){
                 System.out.println(i + ": " + job.get(i));
-                }
+
+                }System.out.println("***** \n");
             }
             System.out.println("printJobs is not implemented yet");
         }
