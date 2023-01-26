@@ -76,7 +76,7 @@ public class JobData {
 
             String aValue = row.get(column);
 
-            if (aValue.contains(value)) {
+            if (aValue.toLowerCase().contains(value.toLowerCase())) {
                 jobs.add(row);
             }
         }
@@ -100,6 +100,8 @@ public class JobData {
         for (HashMap<String, String> column : allJobs) {
             //loop through each column to check for searchTerm value
             for (String aValue: column.values()){
+                aValue.toLowerCase();
+                value.toLowerCase();
                 //if column contains the searchTerm value & not already included in the jobs arrayList
                 //add it to the jobs arrayList
                if(column.containsValue(value) && !jobs.contains(column)){
