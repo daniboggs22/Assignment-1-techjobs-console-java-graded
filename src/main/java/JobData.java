@@ -91,25 +91,28 @@ public class JobData {
      * @return List of all jobs with at least one field containing the value
      */
     public static ArrayList<HashMap<String, String>> findByValue(String value) {
-
-        // load data, if not already loaded
         loadData();
 //create new jobs arrayList
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
-//loop through allJobs data by column
-        for (HashMap<String, String> column : allJobs) {
-            //loop through each column to check for searchTerm value
-            for (String aValue: column.values()){
-                //if column contains the searchTerm value & not already included in the jobs arrayList
-                //add it to the jobs arrayList
-               if(column.containsValue(value) && !jobs.contains(column)){
-                   jobs.add(column);
-                   //if specific column is already added to the job arrayList,
-                   // don't add the second instance of the same column
-                   }
-               }
+
+
+
+        //loop through each job in all jobs
+        for(HashMap<String, String> job: allJobs) {
+            //then each key of the job hashmap and search the value,
+            for (String key : job.keySet()) {
+                String aValue = job.get(key).toLowerCase();
+                // if that specific job hashmap is already included, go to the next one.
+                    if(!jobs.contains(aValue) || !jobs.contains(value)) {
+                        if (aValue.contains(value.toLowerCase())) {
+                            // If not already included in the arrayList, add it.
+                            jobs.add(job);
+//                            System.out.println("****key : " + key + " value : " + aValue + "~~~~~");
+                        }
+                    }
             }
-        System.out.println("findByValue method is working.");
+        }
+       // System.out.println("findByValue method is working.");
         return jobs;
         }
 
