@@ -94,16 +94,13 @@ public class JobData {
         loadData();
 //create new jobs arrayList
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
-
-
-
         //loop through each job in all jobs
         for(HashMap<String, String> job: allJobs) {
             //then each key of the job hashmap and search the value,
             for (String key : job.keySet()) {
                 String aValue = job.get(key).toLowerCase();
                 // if that specific job hashmap is already included, go to the next one.
-                    if(!jobs.contains(aValue) || !jobs.contains(value)) {
+                    if(!jobs.contains(job)) {
                         if (aValue.contains(value.toLowerCase())) {
                             // If not already included in the arrayList, add it.
                             jobs.add(job);

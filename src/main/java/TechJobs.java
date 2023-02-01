@@ -123,7 +123,7 @@ public class TechJobs {
         //create a nested loop to iterate over each HashMap job
         if(someJobs.size() == 0){
             System.out.println("No Results");
-            return;
+//            return;
         }
         for (HashMap<String, String> job : someJobs) {
             //System.out.println(job);   // prints the jobs in HashMap form
