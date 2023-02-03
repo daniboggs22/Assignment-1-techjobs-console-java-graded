@@ -100,12 +100,13 @@ public class JobData {
             for (String key : job.keySet()) {
                 String aValue = job.get(key).toLowerCase();
                 // if that specific job hashmap is already included, go to the next one.
-                    if(!jobs.contains(job)) {
+//                    if(!jobs.contains(job)) {
                         if (aValue.contains(value.toLowerCase())) {
                             // If not already included in the arrayList, add it.
                             jobs.add(job);
 //                            System.out.println("****key : " + key + " value : " + aValue + "~~~~~");
-                        }
+                            break;
+                        //}
                     }
             }
         }

@@ -127,13 +127,16 @@ public class TechJobs {
         }
         for (HashMap<String, String> job : someJobs) {
             //System.out.println(job);   // prints the jobs in HashMap form
-            System.out.println("\n*****");
-
-            for (String i: job.keySet()){
-                System.out.println(i + ": " + job.get(i));
-
-                }System.out.println("*****");
+//            System.out.println("\n*****");
+            String result = "\n*****\n";
+//            for (String i: job.keySet()){
+//                System.out.println(i + ": " + job.get(i));
+            for(Map.Entry<String, String> occupation : job.entrySet()){
+                result += (occupation.getKey() + ": " + occupation.getValue() + "\n");
+                } result += "*****";
+            System.out.println(result);
             }
+
 
         }
     }
